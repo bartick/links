@@ -1,0 +1,21 @@
+---
+import Icon from './Icon.astro';
+
+export interface Props {
+	socials: any;
+}
+
+const { socials } = Astro.props;
+---
+
+<div class="mt-5 flex justify-center space-x-2">
+    {
+        socials.map((social: any) => (
+            <div class="mt-5 flex justify-center space-x-2">
+                <a href={social.frontmatter.url}>
+                    <Icon icon={social.frontmatter.icon} />
+                </a>
+            </div> 
+        ))
+    }
+</div>
